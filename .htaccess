@@ -1,0 +1,27 @@
+# CIRC – Apache config for cPanel / public_html
+
+DirectoryIndex index.html
+
+# Serve index.html for directory requests
+Options -MultiViews
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force www (optional – uncomment if desired)
+  # RewriteCond %{HTTP_HOST} ^chiedzaimmigration\.co\.za [NC]
+  # RewriteRule ^(.*)$ https://www.chiedzaimmigration.co.za/$1 [L,R=301]
+
+  # Trailing slash for Next.js static export
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteRule ^(.*)$ $1/ [L,R=301]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
