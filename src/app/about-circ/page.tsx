@@ -1,8 +1,10 @@
+import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
+import { BannerStrip } from "@/components/sections/BannerStrip";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { DR_CHIEDZA_IMAGES } from "@/lib/images";
 import { createMetadata } from "@/lib/metadata";
 import { Target, Eye, Heart } from "lucide-react";
 
@@ -45,6 +47,8 @@ export default function AboutCircPage() {
           { label: "About CIRC" },
         ]}
         showCta
+        bannerImage={DR_CHIEDZA_IMAGES.uniform}
+        bannerAlt="Dr Chiedza Simbo, founder of CIRC"
       />
 
       <section className="section-padding bg-white">
@@ -72,15 +76,33 @@ export default function AboutCircPage() {
                 strategies that deliver real results.
               </p>
             </div>
-            <ImagePlaceholder
-              alt="CIRC team and office"
-              aspectRatio="landscape"
-              label="CIRC Consultancy"
-              sublabel="Team / office photo placeholder"
-            />
+            <div className="relative overflow-hidden rounded-sm shadow-xl aspect-[4/3]">
+              <Image
+                src={DR_CHIEDZA_IMAGES.lectureHall}
+                alt="Dr Chiedza Simbo representing CIRC"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="font-serif text-lg font-bold text-white">
+                  Led by Dr Chiedza Simbo
+                </p>
+                <p className="text-sm text-gold-400">PhD in Law · 15+ Years Experience</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <BannerStrip
+        image={DR_CHIEDZA_IMAGES.headshot}
+        alt="Dr Chiedza Simbo"
+        title="Trusted Guidance for Every Immigration Journey"
+        subtitle="From first consultation to final outcome — CIRC stands beside you with expertise you can rely on."
+        align="right"
+      />
 
       <section className="section-padding bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

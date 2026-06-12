@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { DR_CHIEDZA_IMAGES } from "@/lib/images";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { testimonials } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
@@ -22,6 +23,8 @@ export default function TestimonialsPage() {
           { label: "Success Stories" },
         ]}
         showCta
+        bannerImage={DR_CHIEDZA_IMAGES.headshot}
+        bannerAlt="Dr Chiedza Simbo - CIRC success stories"
       />
 
       <section className="section-padding bg-cream">

@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award, Scale, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { PortraitImage } from "@/components/ui/PortraitImage";
+import { DR_CHIEDZA_IMAGES } from "@/lib/images";
 
 const credentials = [
   { icon: GraduationCap, label: "PhD in Law" },
@@ -20,15 +21,10 @@ export function FounderSection() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative"
           >
-            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-gold-500/30 rounded-sm" />
-            <ImagePlaceholder
+            <PortraitImage
+              src={DR_CHIEDZA_IMAGES.headshot}
               alt="Dr Chiedza Simbo - Founder of CIRC"
-              aspectRatio="portrait"
-              label="Dr Chiedza Simbo"
-              sublabel="Professional photo placeholder"
-              className="relative z-10"
             />
           </motion.div>
 

@@ -6,8 +6,10 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { BannerStrip } from "@/components/sections/BannerStrip";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { servicesPreview } from "@/lib/content";
+import { DR_CHIEDZA_IMAGES } from "@/lib/images";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -39,6 +41,15 @@ export default function HomePage() {
       </section>
 
       <WhyChooseSection />
+
+      <BannerStrip
+        image={DR_CHIEDZA_IMAGES.graduation}
+        alt="Dr Chiedza Simbo at graduation"
+        title="PhD-Level Legal Expertise"
+        subtitle="Dr Chiedza Simbo brings academic excellence and over 15 years of immigration practice to every client case."
+        align="left"
+      />
+
       <HowItWorks />
       <FounderSection />
       <TestimonialsSection />

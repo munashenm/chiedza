@@ -1,6 +1,9 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { BannerStrip } from "@/components/sections/BannerStrip";
+import { PhotoGallery } from "@/components/sections/PhotoGallery";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { PortraitImage } from "@/components/ui/PortraitImage";
+import { DR_CHIEDZA_IMAGES } from "@/lib/images";
 import { createMetadata } from "@/lib/metadata";
 import {
   GraduationCap,
@@ -38,6 +41,29 @@ const expertise = [
   "Police clearance and document verification services",
 ];
 
+const galleryImages = [
+  {
+    src: DR_CHIEDZA_IMAGES.uniform,
+    alt: "Dr Chiedza Simbo in CIRC professional attire",
+    caption: "CIRC Founder",
+  },
+  {
+    src: DR_CHIEDZA_IMAGES.headshot,
+    alt: "Dr Chiedza Simbo professional headshot",
+    caption: "Principal Consultant",
+  },
+  {
+    src: DR_CHIEDZA_IMAGES.lectureHall,
+    alt: "Dr Chiedza Simbo in academic setting",
+    caption: "Legal Educator",
+  },
+  {
+    src: DR_CHIEDZA_IMAGES.graduation,
+    alt: "Dr Chiedza Simbo at graduation ceremony",
+    caption: "PhD in Law",
+  },
+];
+
 export default function AboutDrChiedzaPage() {
   return (
     <>
@@ -49,6 +75,8 @@ export default function AboutDrChiedzaPage() {
           { label: "Dr Chiedza Simbo" },
         ]}
         showCta
+        bannerImage={DR_CHIEDZA_IMAGES.lectureHall}
+        bannerAlt="Dr Chiedza Simbo, immigration law specialist"
       />
 
       <section className="section-padding bg-white">
@@ -56,11 +84,10 @@ export default function AboutDrChiedzaPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             <div className="lg:col-span-2">
               <div className="sticky top-28">
-                <ImagePlaceholder
+                <PortraitImage
+                  src={DR_CHIEDZA_IMAGES.uniform}
                   alt="Dr Chiedza Simbo professional portrait"
-                  aspectRatio="portrait"
-                  label="Dr Chiedza Simbo"
-                  sublabel="Professional portrait placeholder — insert from company profile"
+                  priority
                 />
                 <div className="grid grid-cols-2 gap-3 mt-6">
                   {highlights.map((item) => (
@@ -134,6 +161,19 @@ export default function AboutDrChiedzaPage() {
           </div>
         </div>
       </section>
+
+      <BannerStrip
+        image={DR_CHIEDZA_IMAGES.graduation}
+        alt="Dr Chiedza Simbo at PhD graduation"
+        title="PhD in Law — A Foundation of Excellence"
+        subtitle="Academic rigour and practical expertise underpin every case CIRC handles."
+        align="left"
+      />
+
+      <PhotoGallery
+        title="Dr Chiedza Simbo"
+        images={galleryImages}
+      />
 
       <ConsultationCTA />
     </>

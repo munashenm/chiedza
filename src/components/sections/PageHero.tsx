@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 
@@ -9,6 +10,8 @@ interface PageHeroProps {
   breadcrumbs?: { label: string; href?: string }[];
   showCta?: boolean;
   compact?: boolean;
+  bannerImage?: string;
+  bannerAlt?: string;
 }
 
 export function PageHero({
@@ -17,15 +20,35 @@ export function PageHero({
   breadcrumbs,
   showCta = false,
   compact = false,
+  bannerImage,
+  bannerAlt = "",
 }: PageHeroProps) {
   return (
     <section
-      className={`relative gradient-navy pattern-overlay overflow-hidden ${
-        compact ? "py-16 lg:py-20" : "py-20 lg:py-28"
-      }`}
+      className={`relative overflow-hidden ${
+        bannerImage ? "bg-navy-950" : "gradient-navy pattern-overlay"
+      } ${compact ? "py-16 lg:py-20" : "py-20 lg:py-28"}`}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,162,39,0.12),transparent_60%)]" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
+      {bannerImage && (
+        <>
+          <Image
+            src={bannerImage}
+            alt={bannerAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-950/50" />
+        </>
+      )}
+
+      {!bannerImage && (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,162,39,0.12),transparent_60%)]" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
+        </>
+      )}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {breadcrumbs && (
