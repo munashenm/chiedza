@@ -46,7 +46,15 @@ export const NAV_LINKS: NavLink[] = [
     ],
   },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  {
+    href: "/contact",
+    label: "Contact",
+    children: [
+      { href: "/contact", label: "Contact Us" },
+      { href: "/book-consultation", label: "Book Consultation" },
+      { href: "/document-upload", label: "Document Upload" },
+    ],
+  },
 ];
 
 export const LEGAL_DISCLAIMER =

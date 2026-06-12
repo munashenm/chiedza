@@ -15,6 +15,8 @@ const staticRoutes = [
   "/testimonials",
   "/blog",
   "/contact",
+  "/book-consultation",
+  "/document-upload",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

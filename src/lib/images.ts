@@ -15,5 +15,7 @@ export const PAGE_BANNERS = {
   aboutDr: DR_CHIEDZA_IMAGES.lectureHall,
   testimonials: DR_CHIEDZA_IMAGES.headshot,
   contact: DR_CHIEDZA_IMAGES.uniform,
+  bookConsultation: DR_CHIEDZA_IMAGES.headshot,
+  documentUpload: DR_CHIEDZA_IMAGES.graduation,
   blog: DR_CHIEDZA_IMAGES.graduation,
 } as const;

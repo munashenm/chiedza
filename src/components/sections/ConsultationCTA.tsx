@@ -61,7 +61,7 @@ export function ConsultationCTA() {
             expert, personalised guidance tailored to your unique circumstances.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="/contact" variant="primary" className="!px-8 !py-4">
+            <Button href="/book-consultation" variant="primary" className="!px-8 !py-4">
               <Calendar className="w-5 h-5" />
               Book a Consultation
             </Button>

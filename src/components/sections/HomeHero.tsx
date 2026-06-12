@@ -79,7 +79,7 @@ export function HomeHero() {
               transition={{ duration: 0.6, delay: 0.45 }}
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
-              <Button href="/contact" variant="primary" className="!px-8 !py-4 !text-base">
+              <Button href="/book-consultation" variant="primary" className="!px-8 !py-4 !text-base">
                 <Calendar className="w-5 h-5" />
                 Book a Consultation
               </Button>

@@ -84,7 +84,7 @@ export function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Button href="/contact" variant="primary" className="!py-2.5 !px-5 !text-xs">
+            <Button href="/book-consultation" variant="primary" className="!py-2.5 !px-5 !text-xs">
               Book Consultation
             </Button>
           </div>
@@ -146,7 +146,7 @@ export function Header() {
                 )
               )}
               <div className="pt-4 px-3">
-                <Button href="/contact" variant="primary" className="w-full">
+                <Button href="/book-consultation" variant="primary" className="w-full">
                   Book Consultation
                 </Button>
               </div>

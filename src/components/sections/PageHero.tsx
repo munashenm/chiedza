@@ -104,10 +104,10 @@ export function PageHero({
             transition={{ delay: 0.3 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <Button href="/contact" variant="primary">
+            <Button href="/book-consultation" variant="primary">
               Book a Consultation
             </Button>
-            <Button href="/contact#assessment" variant="ghost">
+            <Button href="/book-consultation#assessment" variant="ghost">
               Free Eligibility Check
             </Button>
           </motion.div>

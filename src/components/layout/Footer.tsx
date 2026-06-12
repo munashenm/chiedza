@@ -15,6 +15,8 @@ const footerCompany = [
   { href: "/testimonials", label: "Success Stories" },
   { href: "/blog", label: "Immigration Updates" },
   { href: "/contact", label: "Contact Us" },
+  { href: "/book-consultation", label: "Book Consultation" },
+  { href: "/document-upload", label: "Document Upload" },
 ];
 
 export function Footer() {
