@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { blogPosts } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { PAGE_BANNERS } from "@/lib/images";
 import { formatDate } from "@/lib/utils";
 import { ArrowLeft, Clock } from "lucide-react";
 
@@ -44,6 +45,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           { label: post.category },
         ]}
         compact
+        bannerImage={PAGE_BANNERS.blog}
+        bannerAlt="CIRC immigration article"
       />
 
       <article className="section-padding bg-white">

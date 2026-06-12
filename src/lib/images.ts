@@ -4,3 +4,16 @@ export const DR_CHIEDZA_IMAGES = {
   headshot: "/images/dr-chiedza/headshot.png",
   graduation: "/images/dr-chiedza/graduation.png",
 } as const;
+
+export const PAGE_BANNERS = {
+  default: DR_CHIEDZA_IMAGES.headshot,
+  southAfrica: DR_CHIEDZA_IMAGES.uniform,
+  ukDependent: DR_CHIEDZA_IMAGES.headshot,
+  skilledMigration: DR_CHIEDZA_IMAGES.graduation,
+  appeals: DR_CHIEDZA_IMAGES.lectureHall,
+  aboutCirc: DR_CHIEDZA_IMAGES.uniform,
+  aboutDr: DR_CHIEDZA_IMAGES.lectureHall,
+  testimonials: DR_CHIEDZA_IMAGES.headshot,
+  contact: DR_CHIEDZA_IMAGES.uniform,
+  blog: DR_CHIEDZA_IMAGES.graduation,
+} as const;

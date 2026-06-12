@@ -6,6 +6,7 @@ import { EligibilityForm } from "@/components/forms/EligibilityForm";
 import { DocumentUploadForm } from "@/components/forms/DocumentUploadForm";
 import { createMetadata } from "@/lib/metadata";
 import { SITE } from "@/lib/constants";
+import { PAGE_BANNERS } from "@/lib/images";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -38,6 +39,8 @@ export default function ContactPage() {
           { label: "Contact" },
         ]}
         compact
+        bannerImage={PAGE_BANNERS.contact}
+        bannerAlt="Contact CIRC immigration consultancy"
       />
 
       <section className="section-padding bg-white">

@@ -4,7 +4,7 @@ import { BannerStrip } from "@/components/sections/BannerStrip";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
-import { DR_CHIEDZA_IMAGES } from "@/lib/images";
+import { DR_CHIEDZA_IMAGES, PAGE_BANNERS } from "@/lib/images";
 import { createMetadata } from "@/lib/metadata";
 import { Target, Eye, Heart } from "lucide-react";
 
@@ -47,7 +47,7 @@ export default function AboutCircPage() {
           { label: "About CIRC" },
         ]}
         showCta
-        bannerImage={DR_CHIEDZA_IMAGES.uniform}
+        bannerImage={PAGE_BANNERS.aboutCirc}
         bannerAlt="Dr Chiedza Simbo, founder of CIRC"
       />
 

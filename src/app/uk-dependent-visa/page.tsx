@@ -4,6 +4,7 @@ import { ServiceDetailGrid } from "@/components/sections/ServiceDetailGrid";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { ukDependentServices } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { PAGE_BANNERS } from "@/lib/images";
 
 export const metadata = createMetadata({
   title: "UK Dependent Visa Services",
@@ -23,6 +24,8 @@ export default function UKDependentVisaPage() {
           { label: "UK Dependent Visa" },
         ]}
         showCta
+        bannerImage={PAGE_BANNERS.ukDependent}
+        bannerAlt="UK dependent visa services - CIRC"
       />
 
       <section className="section-padding bg-cream">

@@ -4,6 +4,7 @@ import { ServiceDetailGrid } from "@/components/sections/ServiceDetailGrid";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { skilledMigrationServices } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { PAGE_BANNERS } from "@/lib/images";
 
 export const metadata = createMetadata({
   title: "Skilled Migration: UK, Canada & Australia",
@@ -41,6 +42,8 @@ export default function SkilledMigrationPage() {
           { label: "Skilled Migration" },
         ]}
         showCta
+        bannerImage={PAGE_BANNERS.skilledMigration}
+        bannerAlt="Skilled migration services - CIRC"
       />
 
       <section className="section-padding bg-white">

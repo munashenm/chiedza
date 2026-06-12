@@ -3,6 +3,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { blogPosts } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { PAGE_BANNERS } from "@/lib/images";
 import { formatDate } from "@/lib/utils";
 import { ArrowRight, Clock } from "lucide-react";
 
@@ -24,6 +25,8 @@ export default function BlogPage() {
           { label: "Blog" },
         ]}
         compact
+        bannerImage={PAGE_BANNERS.blog}
+        bannerAlt="CIRC immigration updates and blog"
       />
 
       <section className="section-padding bg-cream">

@@ -3,7 +3,7 @@ import { BannerStrip } from "@/components/sections/BannerStrip";
 import { PhotoGallery } from "@/components/sections/PhotoGallery";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { PortraitImage } from "@/components/ui/PortraitImage";
-import { DR_CHIEDZA_IMAGES } from "@/lib/images";
+import { DR_CHIEDZA_IMAGES, PAGE_BANNERS } from "@/lib/images";
 import { createMetadata } from "@/lib/metadata";
 import {
   GraduationCap,
@@ -75,7 +75,7 @@ export default function AboutDrChiedzaPage() {
           { label: "Dr Chiedza Simbo" },
         ]}
         showCta
-        bannerImage={DR_CHIEDZA_IMAGES.lectureHall}
+        bannerImage={PAGE_BANNERS.aboutDr}
         bannerAlt="Dr Chiedza Simbo, immigration law specialist"
       />
 

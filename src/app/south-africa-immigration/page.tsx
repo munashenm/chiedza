@@ -4,6 +4,7 @@ import { ServiceDetailGrid } from "@/components/sections/ServiceDetailGrid";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { southAfricaServices } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { PAGE_BANNERS } from "@/lib/images";
 
 export const metadata = createMetadata({
   title: "South Africa Immigration Services",
@@ -23,6 +24,8 @@ export default function SouthAfricaImmigrationPage() {
           { label: "South Africa Immigration" },
         ]}
         showCta
+        bannerImage={PAGE_BANNERS.southAfrica}
+        bannerAlt="South Africa immigration services - CIRC"
       />
 
       <section className="section-padding bg-cream">

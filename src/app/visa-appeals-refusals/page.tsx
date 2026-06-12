@@ -4,6 +4,7 @@ import { ServiceDetailGrid } from "@/components/sections/ServiceDetailGrid";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { appealsServices } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { PAGE_BANNERS } from "@/lib/images";
 
 export const metadata = createMetadata({
   title: "Visa Appeals & Refusals",
@@ -23,6 +24,8 @@ export default function VisaAppealsPage() {
           { label: "Visa Appeals & Refusals" },
         ]}
         showCta
+        bannerImage={PAGE_BANNERS.appeals}
+        bannerAlt="Visa appeals and refusals - CIRC"
       />
 
       <section className="section-padding bg-cream">
@@ -36,12 +39,12 @@ export default function VisaAppealsPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-navy-900">
+      <section className="section-padding" style={{ backgroundColor: "#0a1628" }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-4">
+          <h2 className="font-serif text-2xl lg:text-3xl font-bold mb-4" style={{ color: "#ffffff" }}>
             Act Quickly — Deadlines Matter
           </h2>
-          <p className="text-white/75 leading-relaxed">
+          <p className="leading-relaxed" style={{ color: "rgba(255,255,255,0.8)" }}>
             Immigration appeal windows are strict. If you have received a refusal
             or overstay notice, contact CIRC immediately for an urgent case
             review. Early intervention significantly improves your chances of a
