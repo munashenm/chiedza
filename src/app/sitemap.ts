@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/content";
 import { SITE } from "@/lib/constants";
 
+export const dynamic = "force-static";
+
 const staticRoutes = [
   "",
   "/about-circ",
