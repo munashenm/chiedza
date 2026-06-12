@@ -35,5 +35,5 @@ jobs:
         with:
           folder: out
           branch: cpanel-deploy
-          single-commit: true
+          single-commit: false
           clean: true
