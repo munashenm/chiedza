@@ -19,24 +19,35 @@ export const TRUST_BADGES = [
   { label: "Specialist", sublabel: "Immigration & Refugee Consultancy" },
 ] as const;
 
-export const NAV_LINKS = [
+export type NavChild = { href: string; label: string };
+export type NavLink =
+  | { href: string; label: string; children?: never }
+  | { href: string; label: string; children: NavChild[] };
+
+export const NAV_LINKS: NavLink[] = [
   { href: "/", label: "Home" },
-  { href: "/about-circ", label: "About CIRC" },
-  { href: "/about-dr-chiedza-simbo", label: "Dr Chiedza Simbo" },
   {
-    href: "/south-africa-immigration",
-    label: "South Africa",
+    href: "/about-circ",
+    label: "About CIRC",
     children: [
-      { href: "/south-africa-immigration", label: "All SA Services" },
-      { href: "/visa-appeals-refusals", label: "Appeals & Refusals" },
+      { href: "/about-circ", label: "About CIRC" },
+      { href: "/about-dr-chiedza-simbo", label: "Dr Chiedza Simbo" },
+      { href: "/testimonials", label: "Success Stories" },
     ],
   },
-  { href: "/uk-dependent-visa", label: "UK Dependent Visa" },
-  { href: "/skilled-migration", label: "Skilled Migration" },
-  { href: "/testimonials", label: "Success Stories" },
+  {
+    href: "/south-africa-immigration",
+    label: "Our Services",
+    children: [
+      { href: "/south-africa-immigration", label: "South Africa Immigration" },
+      { href: "/uk-dependent-visa", label: "UK Dependent Visa" },
+      { href: "/skilled-migration", label: "Skilled Migration" },
+      { href: "/visa-appeals-refusals", label: "Visa Appeals & Refusals" },
+    ],
+  },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
-] as const;
+];
 
 export const LEGAL_DISCLAIMER =
   "Information on this website is for general guidance only and does not constitute legal advice. Please book a consultation for advice specific to your case.";

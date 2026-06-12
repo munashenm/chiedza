@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/Button";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-navy-900/10 shadow-sm">
@@ -45,19 +46,19 @@ export function Header() {
 
           <div className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map((link) =>
-              "children" in link ? (
+              link.children ? (
                 <div
-                  key={link.href}
+                  key={link.label}
                   className="relative"
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
+                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy-800 hover:text-gold-500 transition-colors">
                     {link.label}
                     <ChevronDown className="w-3.5 h-3.5" />
                   </button>
-                  {servicesOpen && (
-                    <div className="absolute top-full left-0 w-52 bg-white rounded-sm shadow-xl border border-navy-900/10 py-2">
+                  {openDropdown === link.label && (
+                    <div className="absolute top-full left-0 w-56 bg-white rounded-sm shadow-xl border border-navy-900/10 py-2">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
@@ -100,16 +101,50 @@ export function Header() {
         {mobileOpen && (
           <div className="lg:hidden pb-6 border-t border-navy-900/10 pt-4">
             <div className="flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-3 py-3 text-sm font-medium text-navy-800 hover:bg-gold-100 rounded-sm transition-colors"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) =>
+                link.children ? (
+                  <div key={link.label}>
+                    <button
+                      className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-navy-800 hover:bg-gold-100 rounded-sm transition-colors"
+                      onClick={() =>
+                        setMobileExpanded(
+                          mobileExpanded === link.label ? null : link.label
+                        )
+                      }
+                    >
+                      {link.label}
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${
+                          mobileExpanded === link.label ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {mobileExpanded === link.label && (
+                      <div className="ml-4 border-l-2 border-gold-500/30 pl-2 mb-1">
+                        {link.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-3 py-2.5 text-sm text-navy-600 hover:text-gold-500 transition-colors"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="px-3 py-3 text-sm font-medium text-navy-800 hover:bg-gold-100 rounded-sm transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <div className="pt-4 px-3">
                 <Button href="/contact" variant="primary" className="w-full">
                   Book Consultation
